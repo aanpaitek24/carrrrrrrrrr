@@ -254,58 +254,58 @@ class MobileTypography extends Typography {
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Lato';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Lato';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Lato';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Lato';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Lato';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Lato';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Lato';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Lato';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -366,58 +366,58 @@ class TabletTypography extends Typography {
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Lato';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Lato';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Lato';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Lato';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Lato';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Lato';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Lato';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Lato';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -478,58 +478,58 @@ class DesktopTypography extends Typography {
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Lato';
+  String get titleMediumFamily => 'Roboto';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Lato';
+  String get titleSmallFamily => 'Roboto';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Lato';
+  String get labelLargeFamily => 'Roboto';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Lato';
+  String get labelMediumFamily => 'Roboto';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Lato';
+  String get labelSmallFamily => 'Roboto';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Lato';
+  String get bodyLargeFamily => 'Roboto';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Lato';
+  String get bodyMediumFamily => 'Roboto';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Lato';
+  String get bodySmallFamily => 'Roboto';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Lato',
+        'Roboto',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

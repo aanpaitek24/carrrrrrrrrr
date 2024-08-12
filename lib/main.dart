@@ -134,7 +134,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Homepage': const HomepageWidget(),
       'Profile': const ProfileWidget(),
-      'AddServices': const AddServicesWidget(),
+      'CreateServbices': const CreateServbicesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -171,10 +171,10 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.car_repair,
+              Icons.electric_car_sharp,
               size: 24.0,
             ),
-            label: 'Addservice',
+            label: 'Add Service',
             tooltip: '',
           )
         ],

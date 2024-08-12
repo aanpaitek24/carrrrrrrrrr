@@ -101,11 +101,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const ProfileWidget(),
         ),
         FFRoute(
-          name: 'AddServices',
-          path: '/addServices',
+          name: 'CreateServbices',
+          path: '/createServbices',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'AddServices')
-              : const AddServicesWidget(),
+              ? const NavBarPage(initialPage: 'CreateServbices')
+              : const CreateServbicesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

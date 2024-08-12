@@ -13,8 +13,8 @@ class CreateServicesModel extends FlutterFlowModel<CreateServicesWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // Stores action output result for [Backend Call - Create Document] action in Image widget.
-  ServicesRecord? createdimage;
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
+  ServicesRecord? addingservice;
   // State field(s) for carwashName widget.
   FocusNode? carwashNameFocusNode;
   TextEditingController? carwashNameTextController;

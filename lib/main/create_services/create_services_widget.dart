@@ -166,123 +166,178 @@ class _CreateServicesWidgetState extends State<CreateServicesWidget> {
                                               topRight: Radius.circular(4.0),
                                             ),
                                           ),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                allowPhoto: true,
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                setState(() => _model
-                                                    .isDataUploading = true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
-
-                                                var downloadUrls = <String>[];
-                                                try {
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                          .toList();
-
-                                                  downloadUrls =
-                                                      (await Future.wait(
-                                                    selectedMedia.map(
-                                                      (m) async =>
-                                                          await uploadData(
-                                                              m.storagePath,
-                                                              m.bytes),
-                                                    ),
-                                                  ))
-                                                          .where(
-                                                              (u) => u != null)
-                                                          .map((u) => u!)
-                                                          .toList();
-                                                } finally {
-                                                  _model.isDataUploading =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
-                                                  setState(() {
-                                                    _model.uploadedLocalFile =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                    _model.uploadedFileUrl =
-                                                        downloadUrls.first;
-                                                  });
-                                                } else {
-                                                  setState(() {});
-                                                  return;
-                                                }
-                                              }
-
-                                              var servicesRecordReference =
-                                                  ServicesRecord.collection
-                                                      .doc();
-                                              await servicesRecordReference
-                                                  .set(createServicesRecordData(
-                                                image: _model.uploadedFileUrl,
-                                                user: currentUserReference,
-                                              ));
-                                              _model.createdimage = ServicesRecord
-                                                  .getDocumentFromData(
-                                                      createServicesRecordData(
-                                                        image: _model
-                                                            .uploadedFileUrl,
-                                                        user:
-                                                            currentUserReference,
-                                                      ),
-                                                      servicesRecordReference);
-
-                                              setState(() {});
-                                            },
-                                            child: Hero(
-                                              tag: _model.uploadedFileUrl,
-                                              transitionOnUserGestures: true,
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: CachedNetworkImage(
-                                                  fadeInDuration: const Duration(
-                                                      milliseconds: 500),
-                                                  fadeOutDuration: const Duration(
-                                                      milliseconds: 500),
-                                                  imageUrl:
+                                          child: Stack(
+                                            children: [
+                                              Hero(
+                                                tag: valueOrDefault<String>(
+                                                  _model.uploadedFileUrl,
+                                                  'https://media.licdn.com/dms/image/D4D12AQGA6odm93XONA/article-cover_image-shrink_720_1280/0/1675839423933?e=2147483647&v=beta&t=k4l6SyDe2-U9qtTTYJeUHcWNpeeCBqzEnso-okTBjIU',
+                                                ),
+                                                transitionOnUserGestures: true,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: CachedNetworkImage(
+                                                    fadeInDuration: const Duration(
+                                                        milliseconds: 500),
+                                                    fadeOutDuration: const Duration(
+                                                        milliseconds: 500),
+                                                    imageUrl:
+                                                        valueOrDefault<String>(
                                                       _model.uploadedFileUrl,
-                                                  width: 354.0,
-                                                  height: 200.0,
-                                                  fit: BoxFit.cover,
+                                                      'https://media.licdn.com/dms/image/D4D12AQGA6odm93XONA/article-cover_image-shrink_720_1280/0/1675839423933?e=2147483647&v=beta&t=k4l6SyDe2-U9qtTTYJeUHcWNpeeCBqzEnso-okTBjIU',
+                                                    ),
+                                                    width: 354.0,
+                                                    height: 200.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    10.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            final selectedMedia =
+                                                                await selectMediaWithSourceBottomSheet(
+                                                              context: context,
+                                                              allowPhoto: true,
+                                                            );
+                                                            if (selectedMedia !=
+                                                                    null &&
+                                                                selectedMedia.every((m) =>
+                                                                    validateFileFormat(
+                                                                        m.storagePath,
+                                                                        context))) {
+                                                              setState(() =>
+                                                                  _model.isDataUploading =
+                                                                      true);
+                                                              var selectedUploadedFiles =
+                                                                  <FFUploadedFile>[];
+
+                                                              var downloadUrls =
+                                                                  <String>[];
+                                                              try {
+                                                                selectedUploadedFiles =
+                                                                    selectedMedia
+                                                                        .map((m) =>
+                                                                            FFUploadedFile(
+                                                                              name: m.storagePath.split('/').last,
+                                                                              bytes: m.bytes,
+                                                                              height: m.dimensions?.height,
+                                                                              width: m.dimensions?.width,
+                                                                              blurHash: m.blurHash,
+                                                                            ))
+                                                                        .toList();
+
+                                                                downloadUrls = (await Future
+                                                                        .wait(
+                                                                  selectedMedia
+                                                                      .map(
+                                                                    (m) async =>
+                                                                        await uploadData(
+                                                                            m.storagePath,
+                                                                            m.bytes),
+                                                                  ),
+                                                                ))
+                                                                    .where((u) =>
+                                                                        u !=
+                                                                        null)
+                                                                    .map((u) =>
+                                                                        u!)
+                                                                    .toList();
+                                                              } finally {
+                                                                _model.isDataUploading =
+                                                                    false;
+                                                              }
+                                                              if (selectedUploadedFiles
+                                                                          .length ==
+                                                                      selectedMedia
+                                                                          .length &&
+                                                                  downloadUrls
+                                                                          .length ==
+                                                                      selectedMedia
+                                                                          .length) {
+                                                                setState(() {
+                                                                  _model.uploadedLocalFile =
+                                                                      selectedUploadedFiles
+                                                                          .first;
+                                                                  _model.uploadedFileUrl =
+                                                                      downloadUrls
+                                                                          .first;
+                                                                });
+                                                              } else {
+                                                                setState(() {});
+                                                                return;
+                                                              }
+                                                            }
+
+                                                            var servicesRecordReference =
+                                                                ServicesRecord
+                                                                    .collection
+                                                                    .doc();
+                                                            await servicesRecordReference
+                                                                .set(
+                                                                    createServicesRecordData(
+                                                              user:
+                                                                  currentUserReference,
+                                                              image: _model
+                                                                  .uploadedFileUrl,
+                                                            ));
+                                                            _model.addingservice =
+                                                                ServicesRecord
+                                                                    .getDocumentFromData(
+                                                                        createServicesRecordData(
+                                                                          user:
+                                                                              currentUserReference,
+                                                                          image:
+                                                                              _model.uploadedFileUrl,
+                                                                        ),
+                                                                        servicesRecordReference);
+
+                                                            setState(() {});
+                                                          },
+                                                          child: Icon(
+                                                            Icons.add_a_photo,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),

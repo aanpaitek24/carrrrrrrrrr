@@ -101,11 +101,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const ProfileWidget(),
         ),
         FFRoute(
-          name: 'CreateServbices',
-          path: '/createServbices',
+          name: 'CreateServices',
+          path: '/createServices',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'CreateServbices')
-              : const CreateServbicesWidget(),
+              ? const NavBarPage(initialPage: 'CreateServices')
+              : const CreateServicesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -291,7 +291,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   child: Center(
                     child: Image.asset(
                       'assets/images/Untitled_design_(2).gif',

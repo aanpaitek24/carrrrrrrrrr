@@ -134,7 +134,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Homepage': const HomepageWidget(),
       'Profile': const ProfileWidget(),
-      'CreateServbices': const CreateServbicesWidget(),
+      'CreateServices': const CreateServicesWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -147,7 +147,7 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        selectedItemColor: FlutterFlowTheme.of(context).primary,
+        selectedItemColor: FlutterFlowTheme.of(context).tertiary,
         unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
         showSelectedLabels: false,
         showUnselectedLabels: false,

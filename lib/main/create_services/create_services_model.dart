@@ -1,10 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'create_servbices_widget.dart' show CreateServbicesWidget;
+import 'create_services_widget.dart' show CreateServicesWidget;
 import 'package:flutter/material.dart';
 
-class CreateServbicesModel extends FlutterFlowModel<CreateServbicesWidget> {
+class CreateServicesModel extends FlutterFlowModel<CreateServicesWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

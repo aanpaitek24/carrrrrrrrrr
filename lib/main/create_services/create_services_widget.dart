@@ -11,25 +11,25 @@ import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'create_servbices_model.dart';
-export 'create_servbices_model.dart';
+import 'create_services_model.dart';
+export 'create_services_model.dart';
 
-class CreateServbicesWidget extends StatefulWidget {
-  const CreateServbicesWidget({super.key});
+class CreateServicesWidget extends StatefulWidget {
+  const CreateServicesWidget({super.key});
 
   @override
-  State<CreateServbicesWidget> createState() => _CreateServbicesWidgetState();
+  State<CreateServicesWidget> createState() => _CreateServicesWidgetState();
 }
 
-class _CreateServbicesWidgetState extends State<CreateServbicesWidget> {
-  late CreateServbicesModel _model;
+class _CreateServicesWidgetState extends State<CreateServicesWidget> {
+  late CreateServicesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateServbicesModel());
+    _model = createModel(context, () => CreateServicesModel());
 
     _model.carwashNameTextController ??= TextEditingController();
     _model.carwashNameFocusNode ??= FocusNode();
@@ -77,10 +77,11 @@ class _CreateServbicesWidgetState extends State<CreateServbicesWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Create My Services',
+                'Add New Service',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily:
                           FlutterFlowTheme.of(context).headlineMediumFamily,
+                      fontSize: 20.0,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).headlineMediumFamily),
@@ -92,7 +93,7 @@ class _CreateServbicesWidgetState extends State<CreateServbicesWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
+                borderColor: FlutterFlowTheme.of(context).secondaryText,
                 borderRadius: 12.0,
                 borderWidth: 1.0,
                 buttonSize: 40.0,
@@ -109,7 +110,7 @@ class _CreateServbicesWidgetState extends State<CreateServbicesWidget> {
             ),
           ],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 8.0,
         ),
         body: SafeArea(
           top: true,
@@ -156,10 +157,9 @@ class _CreateServbicesWidgetState extends State<CreateServbicesWidget> {
                                           ),
                                         ),
                                         child: Container(
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            borderRadius: const BorderRadius.only(
+                                          decoration: const BoxDecoration(
+                                            color: Color(0x0039D2C0),
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(4.0),
                                               bottomRight: Radius.circular(4.0),
                                               topLeft: Radius.circular(4.0),

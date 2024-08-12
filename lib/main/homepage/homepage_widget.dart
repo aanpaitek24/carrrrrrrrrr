@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,9 +29,6 @@ class _HomepageWidgetState extends State<HomepageWidget> {
     super.initState();
     _model = createModel(context, () => HomepageModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-    _model.textFieldFocusNode!.addListener(() => setState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -97,6 +95,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).headlineMediumFamily,
+                          fontSize: 20.0,
                           letterSpacing: 0.0,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context)
@@ -125,8 +124,8 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                         shape: BoxShape.rectangle,
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 2.0,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          width: 1.0,
                         ),
                       ),
                       child: Padding(
@@ -163,7 +162,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
               ],
               centerTitle: false,
               toolbarHeight: 72.0,
-              elevation: 0.0,
+              elevation: 8.0,
             ),
             body: SafeArea(
               top: true,
@@ -263,7 +262,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                     ),
                     Container(
                       width: double.infinity,
-                      height: 200.0,
+                      height: 228.0,
                       decoration: const BoxDecoration(),
                       child: Padding(
                         padding:
@@ -292,7 +291,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                       0.0, 4.0, 0.0, 12.0),
                                   child: Container(
                                     width: 200.0,
-                                    height: 100.0,
+                                    height: 118.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -311,14 +310,19 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Expanded(
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(4.0),
-                                              child: Image.network(
-                                                allservicesItem.image,
-                                                width: 300.0,
-                                                height: 100.0,
-                                                fit: BoxFit.cover,
+                                            child: Container(
+                                              width: 263.0,
+                                              height: 150.0,
+                                              decoration: const BoxDecoration(),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(4.0),
+                                                child: Image.network(
+                                                  allservicesItem.image,
+                                                  width: 300.0,
+                                                  height: 160.0,
+                                                  fit: BoxFit.cover,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -377,11 +381,11 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                             size: 16.0,
                                                           ),
                                                         ),
-                                                        Text(
+                                                        AutoSizeText(
                                                           allservicesItem
                                                               .location
                                                               .maybeHandleOverflow(
-                                                                  maxChars: 10),
+                                                                  maxChars: 12),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall
@@ -521,105 +525,6 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                           ),
                         ),
                       ],
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                      child: TextFormField(
-                        controller: _model.textController,
-                        focusNode: _model.textFieldFocusNode,
-                        autofocus: false,
-                        textCapitalization: TextCapitalization.sentences,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: 'Search for carwash names...',
-                          labelStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .labelMediumFamily,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .labelMediumFamily),
-                              ),
-                          hintStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .labelMediumFamily,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .labelMediumFamily),
-                              ),
-                          errorStyle: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                color: FlutterFlowTheme.of(context).error,
-                                fontSize: 12.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily),
-                              ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          filled: true,
-                          fillColor:
-                              (_model.textFieldFocusNode?.hasFocus ?? false)
-                                  ? FlutterFlowTheme.of(context).accent1
-                                  : FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                          prefixIcon: Icon(
-                            Icons.search_rounded,
-                            color: (_model.textFieldFocusNode?.hasFocus ??
-                                    false)
-                                ? FlutterFlowTheme.of(context).primary
-                                : FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).bodyMediumFamily,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .bodyMediumFamily),
-                            ),
-                        cursorColor: FlutterFlowTheme.of(context).primary,
-                        validator:
-                            _model.textControllerValidator.asValidator(context),
-                      ),
                     ),
 
                     // This list view is "shrink wrapped" this can affect your app performance, we would suggest limiting the number of items you query in this list view.
@@ -843,7 +748,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 33.0,
+                                                          height: 37.0,
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
@@ -858,8 +763,9 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
-                                                          color:
-                                                              const Color(0xFFB26240),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -881,8 +787,8 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                           elevation: 3.0,
                                                           borderSide:
                                                               const BorderSide(
-                                                            color: Colors
-                                                                .transparent,
+                                                            color: Color(
+                                                                0xFF4B39EF),
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:

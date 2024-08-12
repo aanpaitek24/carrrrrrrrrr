@@ -75,6 +75,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
+            primary: false,
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,29 +102,40 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Container(
-                            width: 90.0,
-                            height: 90.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).accent2,
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).secondary,
-                                width: 2.0,
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 4.0,
+                            shape: const CircleBorder(),
+                            child: Container(
+                              width: 60.0,
+                              height: 60.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  width: 1.0,
+                                ),
                               ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(2.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(50.0),
-                                child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
-                                  imageUrl:
-                                      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHx1c2VyfGVufDB8fHx8MTcyMzM5NzYwOXww&ixlib=rb-4.0.3&q=80&w=1080',
-                                  width: 60.0,
-                                  height: 60.0,
-                                  fit: BoxFit.cover,
+                              child: Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => ClipRRect(
+                                    borderRadius: BorderRadius.circular(60.0),
+                                    child: CachedNetworkImage(
+                                      fadeInDuration:
+                                          const Duration(milliseconds: 500),
+                                      fadeOutDuration:
+                                          const Duration(milliseconds: 500),
+                                      imageUrl: valueOrDefault<String>(
+                                        currentUserPhoto,
+                                        'https://img.freepik.com/premium-vector/man-character_665280-46970.jpg',
+                                      ),
+                                      width: 60.0,
+                                      height: 60.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -148,7 +160,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .headlineSmallFamily,
+                                          fontSize: 20.0,
                                           letterSpacing: 0.0,
+                                          fontWeight: FontWeight.normal,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -607,9 +621,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     },
                     child: Container(
                       width: double.infinity,
-                      height: 60.0,
+                      height: 59.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiary,
+                        color: const Color(0xFFBB6945),
                         boxShadow: const [
                           BoxShadow(
                             blurRadius: 5.0,

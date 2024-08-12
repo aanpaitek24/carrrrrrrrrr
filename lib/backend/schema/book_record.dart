@@ -20,8 +20,14 @@ class BookRecord extends FirestoreRecord {
   DocumentReference? get myservice => _myservice;
   bool hasMyservice() => _myservice != null;
 
+  // "user" field.
+  DocumentReference? _user;
+  DocumentReference? get user => _user;
+  bool hasUser() => _user != null;
+
   void _initializeFields() {
     _myservice = snapshotData['myservice'] as DocumentReference?;
+    _user = snapshotData['user'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -59,10 +65,12 @@ class BookRecord extends FirestoreRecord {
 
 Map<String, dynamic> createBookRecordData({
   DocumentReference? myservice,
+  DocumentReference? user,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'myservice': myservice,
+      'user': user,
     }.withoutNulls,
   );
 
@@ -74,11 +82,11 @@ class BookRecordDocumentEquality implements Equality<BookRecord> {
 
   @override
   bool equals(BookRecord? e1, BookRecord? e2) {
-    return e1?.myservice == e2?.myservice;
+    return e1?.myservice == e2?.myservice && e1?.user == e2?.user;
   }
 
   @override
-  int hash(BookRecord? e) => const ListEquality().hash([e?.myservice]);
+  int hash(BookRecord? e) => const ListEquality().hash([e?.myservice, e?.user]);
 
   @override
   bool isValidKey(Object? o) => o is BookRecord;

@@ -294,8 +294,8 @@ class FFRoute {
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/tuddzwhite.png',
-                      width: 300.0,
+                      'assets/images/Untitled_design_(2).gif',
+                      width: 350.0,
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'homepage_widget.dart' show HomepageWidget;
@@ -12,6 +13,8 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
       choiceChipsValueController?.value?.firstOrNull;
   set choiceChipsValue(String? val) =>
       choiceChipsValueController?.value = val != null ? [val] : [];
+  // Stores action output result for [Backend Call - Create Document] action in Icon widget.
+  BookingRecord? mybooking;
 
   @override
   void initState(BuildContext context) {}

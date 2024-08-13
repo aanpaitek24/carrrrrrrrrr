@@ -7,7 +7,7 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/services_record.dart';
-import 'schema/book_record.dart';
+import 'schema/booking_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -18,7 +18,7 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
 export 'schema/services_record.dart';
-export 'schema/book_record.dart';
+export 'schema/booking_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -94,38 +94,38 @@ Future<List<ServicesRecord>> queryServicesRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query BookRecords (as a Stream and as a Future).
-Future<int> queryBookRecordCount({
+/// Functions to query BookingRecords (as a Stream and as a Future).
+Future<int> queryBookingRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      BookRecord.collection,
+      BookingRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<BookRecord>> queryBookRecord({
+Stream<List<BookingRecord>> queryBookingRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      BookRecord.collection,
-      BookRecord.fromSnapshot,
+      BookingRecord.collection,
+      BookingRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<BookRecord>> queryBookRecordOnce({
+Future<List<BookingRecord>> queryBookingRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      BookRecord.collection,
-      BookRecord.fromSnapshot,
+      BookingRecord.collection,
+      BookingRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

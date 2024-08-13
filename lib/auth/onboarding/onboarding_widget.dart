@@ -108,7 +108,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
             ClipRRect(
               child: Container(
                 width: double.infinity,
-                height: 420.0,
+                height: 388.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
@@ -370,22 +370,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             16.0, 12.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            currentUserLocationValue =
-                                await getCurrentUserLocation(
-                                    defaultLocation: const LatLng(0.0, 0.0));
-                            GoRouter.of(context).prepareAuthEvent();
-                            final user =
-                                await authManager.signInAnonymously(context);
-                            if (user == null) {
-                              return;
-                            }
-
-                            await currentUserReference!
-                                .update(createUsersRecordData(
-                              location: currentUserLocationValue,
-                            ));
-
-                            context.pushNamedAuth('Homepage', context.mounted);
+                            context.pushNamed('CreateAccount');
                           },
                           text: 'Create Account',
                           options: FFButtonOptions(

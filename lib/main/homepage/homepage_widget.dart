@@ -442,11 +442,29 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        await BookRecord
-                                                            .collection
-                                                            .doc()
+                                                        var bookingRecordReference =
+                                                            BookingRecord
+                                                                .collection
+                                                                .doc();
+                                                        await bookingRecordReference
                                                             .set(
-                                                                createBookRecordData());
+                                                                createBookingRecordData(
+                                                          serviceBooked:
+                                                              allservicesItem
+                                                                  .reference,
+                                                          name:
+                                                              currentUserDisplayName,
+                                                        ));
+                                                        _model.mybooking = BookingRecord
+                                                            .getDocumentFromData(
+                                                                createBookingRecordData(
+                                                                  serviceBooked:
+                                                                      allservicesItem
+                                                                          .reference,
+                                                                  name:
+                                                                      currentUserDisplayName,
+                                                                ),
+                                                                bookingRecordReference);
                                                         ScaffoldMessenger.of(
                                                                 context)
                                                             .showSnackBar(
@@ -468,6 +486,8 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                                     .secondary,
                                                           ),
                                                         );
+
+                                                        setState(() {});
                                                       },
                                                       child: Icon(
                                                         Icons.bookmark_add,

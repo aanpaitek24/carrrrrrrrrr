@@ -99,12 +99,12 @@ class _CreateServicesWidgetState extends State<CreateServicesWidget> {
                 buttonSize: 40.0,
                 fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 icon: Icon(
-                  Icons.close_rounded,
+                  Icons.delete_rounded,
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  context.safePop();
+                  await _model.addingservice!.reference.delete();
                 },
               ),
             ),
@@ -321,6 +321,28 @@ class _CreateServicesWidgetState extends State<CreateServicesWidget> {
                                                                               _model.uploadedFileUrl,
                                                                         ),
                                                                         servicesRecordReference);
+                                                            ScaffoldMessenger
+                                                                    .of(context)
+                                                                .showSnackBar(
+                                                              SnackBar(
+                                                                content: Text(
+                                                                  'Created New Service Successfully!',
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                ),
+                                                                duration: const Duration(
+                                                                    milliseconds:
+                                                                        4000),
+                                                                backgroundColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                              ),
+                                                            );
 
                                                             setState(() {});
                                                           },
@@ -1361,12 +1383,12 @@ class _CreateServicesWidgetState extends State<CreateServicesWidget> {
                       },
                       text: 'Submit Services',
                       icon: const Icon(
-                        Icons.add_location_alt,
+                        Icons.add_task_rounded,
                         size: 24.0,
                       ),
                       options: FFButtonOptions(
                         width: double.infinity,
-                        height: 50.0,
+                        height: 53.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
